@@ -249,20 +249,52 @@ class _RehberWidgetState extends State<RehberWidget> {
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(8, 8, 8, 8),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          child: Image.network(
-                                            listViewAydinKadinDogumRecord
-                                                .resimUrl,
-                                            width: 74,
-                                            height: 74,
-                                            fit: BoxFit.cover,
-                                          ),
+                                      StreamBuilder<
+                                          List<AydinKadinDogumRecord>>(
+                                        stream: queryAydinKadinDogumRecord(
+                                          queryBuilder:
+                                              (aydinKadinDogumRecord) =>
+                                                  aydinKadinDogumRecord
+                                                      .orderBy('resimUrl'),
+                                          singleRecord: true,
                                         ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                                child:
+                                                    CircularProgressIndicator());
+                                          }
+                                          List<AydinKadinDogumRecord>
+                                              imageAydinKadinDogumRecordList =
+                                              snapshot.data;
+                                          // Customize what your widget looks like with no query results.
+                                          if (snapshot.data.isEmpty) {
+                                            // return Container();
+                                            // For now, we'll just include some dummy data.
+                                            imageAydinKadinDogumRecordList =
+                                                createDummyAydinKadinDogumRecord(
+                                                    count: 1);
+                                          }
+                                          final imageAydinKadinDogumRecord =
+                                              imageAydinKadinDogumRecordList
+                                                  .first;
+                                          return Padding(
+                                            padding:
+                                                EdgeInsets.fromLTRB(8, 8, 8, 8),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                              child: Image.network(
+                                                listViewAydinKadinDogumRecord
+                                                    .resimUrl,
+                                                width: 74,
+                                                height: 74,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          );
+                                        },
                                       )
                                     ],
                                   ),
@@ -277,46 +309,147 @@ class _RehberWidgetState extends State<RehberWidget> {
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Text(
-                                                listViewAydinKadinDogumRecord
-                                                    .isim,
-                                                style: FlutterFlowTheme
-                                                    .subtitle1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0xFF15212B),
+                                              StreamBuilder<
+                                                  List<AydinKadinDogumRecord>>(
+                                                stream:
+                                                    queryAydinKadinDogumRecord(
+                                                  queryBuilder:
+                                                      (aydinKadinDogumRecord) =>
+                                                          aydinKadinDogumRecord
+                                                              .orderBy('isim'),
+                                                  singleRecord: true,
                                                 ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                        child:
+                                                            CircularProgressIndicator());
+                                                  }
+                                                  List<AydinKadinDogumRecord>
+                                                      textAydinKadinDogumRecordList =
+                                                      snapshot.data;
+                                                  // Customize what your widget looks like with no query results.
+                                                  if (snapshot.data.isEmpty) {
+                                                    // return Container();
+                                                    // For now, we'll just include some dummy data.
+                                                    textAydinKadinDogumRecordList =
+                                                        createDummyAydinKadinDogumRecord(
+                                                            count: 1);
+                                                  }
+                                                  final textAydinKadinDogumRecord =
+                                                      textAydinKadinDogumRecordList
+                                                          .first;
+                                                  return Text(
+                                                    listViewAydinKadinDogumRecord
+                                                        .isim,
+                                                    style: FlutterFlowTheme
+                                                        .subtitle1
+                                                        .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Color(0xFF15212B),
+                                                    ),
+                                                  );
+                                                },
                                               )
                                             ],
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Text(
-                                                listViewAydinKadinDogumRecord
-                                                    .brans,
-                                                style: FlutterFlowTheme
-                                                    .bodyText2
-                                                    .override(
-                                                  fontFamily: 'Poppins',
+                                              StreamBuilder<
+                                                  List<AydinKadinDogumRecord>>(
+                                                stream:
+                                                    queryAydinKadinDogumRecord(
+                                                  queryBuilder:
+                                                      (aydinKadinDogumRecord) =>
+                                                          aydinKadinDogumRecord
+                                                              .orderBy('brans'),
+                                                  singleRecord: true,
                                                 ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                        child:
+                                                            CircularProgressIndicator());
+                                                  }
+                                                  List<AydinKadinDogumRecord>
+                                                      textAydinKadinDogumRecordList =
+                                                      snapshot.data;
+                                                  // Customize what your widget looks like with no query results.
+                                                  if (snapshot.data.isEmpty) {
+                                                    // return Container();
+                                                    // For now, we'll just include some dummy data.
+                                                    textAydinKadinDogumRecordList =
+                                                        createDummyAydinKadinDogumRecord(
+                                                            count: 1);
+                                                  }
+                                                  final textAydinKadinDogumRecord =
+                                                      textAydinKadinDogumRecordList
+                                                          .first;
+                                                  return Text(
+                                                    listViewAydinKadinDogumRecord
+                                                        .brans,
+                                                    style: FlutterFlowTheme
+                                                        .bodyText2
+                                                        .override(
+                                                      fontFamily: 'Poppins',
+                                                    ),
+                                                  );
+                                                },
                                               )
                                             ],
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Text(
-                                                listViewAydinKadinDogumRecord
-                                                    .telefon,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme
-                                                      .primaryColor,
-                                                  fontWeight: FontWeight.w500,
+                                              StreamBuilder<
+                                                  List<AydinKadinDogumRecord>>(
+                                                stream:
+                                                    queryAydinKadinDogumRecord(
+                                                  queryBuilder:
+                                                      (aydinKadinDogumRecord) =>
+                                                          aydinKadinDogumRecord
+                                                              .orderBy(
+                                                                  'telefon'),
+                                                  singleRecord: true,
                                                 ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                        child:
+                                                            CircularProgressIndicator());
+                                                  }
+                                                  List<AydinKadinDogumRecord>
+                                                      textAydinKadinDogumRecordList =
+                                                      snapshot.data;
+                                                  // Customize what your widget looks like with no query results.
+                                                  if (snapshot.data.isEmpty) {
+                                                    // return Container();
+                                                    // For now, we'll just include some dummy data.
+                                                    textAydinKadinDogumRecordList =
+                                                        createDummyAydinKadinDogumRecord(
+                                                            count: 1);
+                                                  }
+                                                  final textAydinKadinDogumRecord =
+                                                      textAydinKadinDogumRecordList
+                                                          .first;
+                                                  return Text(
+                                                    listViewAydinKadinDogumRecord
+                                                        .telefon,
+                                                    style: FlutterFlowTheme
+                                                        .bodyText1
+                                                        .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: FlutterFlowTheme
+                                                          .primaryColor,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  );
+                                                },
                                               )
                                             ],
                                           )
