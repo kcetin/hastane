@@ -1,5 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,93 +32,90 @@ class _RehberDetailWidgetState extends State<RehberDetailWidget> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Stack(
-                              children: [
-                                Align(
-                                  alignment: Alignment(0, 0),
-                                  child: Image.asset(
-                                    'assets/images/card_header@2x.png',
-                                    width: MediaQuery.of(context).size.width,
-                                    height: 130,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment(0.85, 0),
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 90, 0, 0),
-                                    child: Container(
-                                      width: 80,
-                                      height: 80,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/UI_avatar@2x.png',
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 1, 0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Stack(
+                                children: [
+                                  Align(
+                                    alignment: Alignment(0.85, 0),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(0, 60, 0, 0),
+                                      child: Container(
+                                        width: 130,
+                                        height: 130,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: CachedNetworkImage(
+                                          imageUrl:
+                                              'https://pngimg.com/uploads/doctor/doctor_PNG15988.png',
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(24, 140, 0, 0),
-                                  child: Text(
-                                    '[User Name Here]',
-                                    style: FlutterFlowTheme.title2.override(
-                                      fontFamily: 'Poppins',
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment(-1, 0),
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(24, 174, 0, 0),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(24, 144, 0, 0),
                                     child: Text(
-                                      'User.name@domainname.com',
-                                      textAlign: TextAlign.start,
+                                      '05052104049',
                                       style:
-                                          FlutterFlowTheme.bodyText1.override(
+                                          FlutterFlowTheme.subtitle1.override(
                                         fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.secondaryColor,
                                       ),
                                     ),
                                   ),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      )
-                    ],
+                                  Align(
+                                    alignment: Alignment(-1, 0),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.fromLTRB(24, 174, 0, 0),
+                                      child: Text(
+                                        'kasimcetin@gmail.com',
+                                        textAlign: TextAlign.start,
+                                        style:
+                                            FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'Poppins',
+                                          color:
+                                              FlutterFlowTheme.secondaryColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(24, 70, 0, 0),
+                                    child: Text(
+                                      'Kasım ÇETİN',
+                                      style: FlutterFlowTheme.title2.override(
+                                        fontFamily: 'Poppins',
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(24, 114, 0, 0),
+                                    child: Text(
+                                      'Enfeksiyon Hastalıkları',
+                                      style:
+                                          FlutterFlowTheme.subtitle1.override(
+                                        fontFamily: 'Poppins',
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                )
-              ],
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(24, 12, 0, 12),
-                      child: Text(
-                        'İşlem Seç',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    )
-                  ],
                 )
               ],
             ),
@@ -125,13 +123,13 @@ class _RehberDetailWidgetState extends State<RehberDetailWidget> {
               child: Align(
                 alignment: Alignment(0, 0),
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(10, 0, 0, 10),
+                  padding: EdgeInsets.fromLTRB(5, 20, 20, 5),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(1, 50, 10, 1),
+                          padding: EdgeInsets.fromLTRB(15, 15, 1, 1),
                           child: GridView(
                             padding: EdgeInsets.zero,
                             gridDelegate:
@@ -145,7 +143,7 @@ class _RehberDetailWidgetState extends State<RehberDetailWidget> {
                             children: [
                               Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: Color(0xFFDFEDC7),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 elevation: 10,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -169,7 +167,7 @@ class _RehberDetailWidgetState extends State<RehberDetailWidget> {
                               ),
                               Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: Color(0xFFDFEDC7),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 elevation: 10,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -193,7 +191,7 @@ class _RehberDetailWidgetState extends State<RehberDetailWidget> {
                               ),
                               Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: Color(0xFFDFEDC7),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 elevation: 10,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -217,7 +215,7 @@ class _RehberDetailWidgetState extends State<RehberDetailWidget> {
                               ),
                               Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: Color(0xFFDFEDC7),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 elevation: 10,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -241,7 +239,7 @@ class _RehberDetailWidgetState extends State<RehberDetailWidget> {
                               ),
                               Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: Color(0xFFDFEDC7),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 elevation: 10,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -265,7 +263,7 @@ class _RehberDetailWidgetState extends State<RehberDetailWidget> {
                               ),
                               Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: Color(0xFFDFEDC7),
+                                color: FlutterFlowTheme.tertiaryColor,
                                 elevation: 10,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
