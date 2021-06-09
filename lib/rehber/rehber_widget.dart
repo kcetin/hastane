@@ -159,7 +159,10 @@ class _RehberWidgetState extends State<RehberWidget> {
           ),
           Expanded(
             child: StreamBuilder<List<AydinKadinDogumRecord>>(
-              stream: queryAydinKadinDogumRecord(),
+              stream: queryAydinKadinDogumRecord(
+                queryBuilder: (aydinKadinDogumRecord) => aydinKadinDogumRecord
+                    .where('isim', isLessThanOrEqualTo: textController.text),
+              ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
