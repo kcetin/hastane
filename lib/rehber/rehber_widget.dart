@@ -177,142 +177,157 @@ class _RehberWidgetState extends State<RehberWidget> {
                   listViewAydinKadinDogumRecordList =
                       createDummyAydinKadinDogumRecord(count: 4);
                 }
-                return ListView.builder(
-                  padding: EdgeInsets.zero,
-                  scrollDirection: Axis.vertical,
-                  itemCount: listViewAydinKadinDogumRecordList.length,
-                  itemBuilder: (context, listViewIndex) {
-                    final listViewAydinKadinDogumRecord =
-                        listViewAydinKadinDogumRecordList[listViewIndex];
-                    return Padding(
-                      padding: EdgeInsets.fromLTRB(0, 2, 0, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 90,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.network(
-                                      listViewAydinKadinDogumRecord.resimUrl,
-                                      width: 74,
-                                      height: 74,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.fromLTRB(8, 1, 0, 0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          listViewAydinKadinDogumRecord.isim,
-                                          style: FlutterFlowTheme.subtitle1
-                                              .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFF15212B),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          listViewAydinKadinDogumRecord.brans,
-                                          style: FlutterFlowTheme.bodyText2
-                                              .override(
-                                            fontFamily: 'Poppins',
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          listViewAydinKadinDogumRecord.telefon,
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
-                                            fontFamily: 'Poppins',
-                                            color:
-                                                FlutterFlowTheme.primaryColor,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: StreamBuilder<AydinKadinDogumRecord>(
-                                    stream: AydinKadinDogumRecord.getDocument(
-                                        listViewAydinKadinDogumRecord
-                                            .reference),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                            child: CircularProgressIndicator());
-                                      }
-                                      final iconAydinKadinDogumRecord =
-                                          snapshot.data;
-                                      return Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 0, 8, 0),
-                                        child: InkWell(
-                                          onTap: () async {
-                                            await Navigator.push(
-                                              context,
-                                              PageTransition(
-                                                type: PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 50),
-                                                reverseDuration:
-                                                    Duration(milliseconds: 50),
-                                                child: RehberDetailWidget(),
-                                              ),
-                                            );
-                                          },
-                                          child: Icon(
-                                            Icons.chevron_right_outlined,
-                                            color: Color(0xFF95A1AC),
-                                            size: 24,
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
+                return InkWell(
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: Duration(milliseconds: 0),
+                        reverseDuration: Duration(milliseconds: 0),
+                        child: RehberDetailWidget(),
                       ),
                     );
                   },
+                  child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                    scrollDirection: Axis.vertical,
+                    itemCount: listViewAydinKadinDogumRecordList.length,
+                    itemBuilder: (context, listViewIndex) {
+                      final listViewAydinKadinDogumRecord =
+                          listViewAydinKadinDogumRecordList[listViewIndex];
+                      return Padding(
+                        padding: EdgeInsets.fromLTRB(0, 2, 0, 0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 90,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.network(
+                                        listViewAydinKadinDogumRecord.resimUrl,
+                                        width: 74,
+                                        height: 74,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(8, 1, 0, 0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            listViewAydinKadinDogumRecord.isim,
+                                            style: FlutterFlowTheme.subtitle1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF15212B),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            listViewAydinKadinDogumRecord.brans,
+                                            style: FlutterFlowTheme.bodyText2
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            listViewAydinKadinDogumRecord
+                                                .telefon,
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.primaryColor,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: StreamBuilder<AydinKadinDogumRecord>(
+                                      stream: AydinKadinDogumRecord.getDocument(
+                                          listViewAydinKadinDogumRecord
+                                              .reference),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                              child:
+                                                  CircularProgressIndicator());
+                                        }
+                                        final iconAydinKadinDogumRecord =
+                                            snapshot.data;
+                                        return Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(0, 0, 8, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              await Navigator.push(
+                                                context,
+                                                PageTransition(
+                                                  type: PageTransitionType.fade,
+                                                  duration: Duration(
+                                                      milliseconds: 50),
+                                                  reverseDuration: Duration(
+                                                      milliseconds: 50),
+                                                  child: RehberDetailWidget(),
+                                                ),
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons.chevron_right_outlined,
+                                              color: Color(0xFF95A1AC),
+                                              size: 24,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 );
               },
             ),
