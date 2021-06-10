@@ -286,7 +286,7 @@ class _RehberWidgetState extends State<RehberWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(8),
                                               child: Image.network(
-                                                listViewAydinKadinDogumRecord
+                                                rehberAydinKadinDogumRecord
                                                     .resimUrl,
                                                 width: 74,
                                                 height: 74,
@@ -309,147 +309,46 @@ class _RehberWidgetState extends State<RehberWidget> {
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              StreamBuilder<
-                                                  List<AydinKadinDogumRecord>>(
-                                                stream:
-                                                    queryAydinKadinDogumRecord(
-                                                  queryBuilder:
-                                                      (aydinKadinDogumRecord) =>
-                                                          aydinKadinDogumRecord
-                                                              .orderBy('isim'),
-                                                  singleRecord: true,
+                                              Text(
+                                                rehberAydinKadinDogumRecord
+                                                    .isim,
+                                                style: FlutterFlowTheme
+                                                    .subtitle1
+                                                    .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF15212B),
                                                 ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                        child:
-                                                            CircularProgressIndicator());
-                                                  }
-                                                  List<AydinKadinDogumRecord>
-                                                      textAydinKadinDogumRecordList =
-                                                      snapshot.data;
-                                                  // Customize what your widget looks like with no query results.
-                                                  if (snapshot.data.isEmpty) {
-                                                    // return Container();
-                                                    // For now, we'll just include some dummy data.
-                                                    textAydinKadinDogumRecordList =
-                                                        createDummyAydinKadinDogumRecord(
-                                                            count: 1);
-                                                  }
-                                                  final textAydinKadinDogumRecord =
-                                                      textAydinKadinDogumRecordList
-                                                          .first;
-                                                  return Text(
-                                                    listViewAydinKadinDogumRecord
-                                                        .isim,
-                                                    style: FlutterFlowTheme
-                                                        .subtitle1
-                                                        .override(
-                                                      fontFamily: 'Poppins',
-                                                      color: Color(0xFF15212B),
-                                                    ),
-                                                  );
-                                                },
                                               )
                                             ],
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              StreamBuilder<
-                                                  List<AydinKadinDogumRecord>>(
-                                                stream:
-                                                    queryAydinKadinDogumRecord(
-                                                  queryBuilder:
-                                                      (aydinKadinDogumRecord) =>
-                                                          aydinKadinDogumRecord
-                                                              .orderBy('brans'),
-                                                  singleRecord: true,
+                                              Text(
+                                                rehberAydinKadinDogumRecord
+                                                    .brans,
+                                                style: FlutterFlowTheme
+                                                    .bodyText2
+                                                    .override(
+                                                  fontFamily: 'Poppins',
                                                 ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                        child:
-                                                            CircularProgressIndicator());
-                                                  }
-                                                  List<AydinKadinDogumRecord>
-                                                      textAydinKadinDogumRecordList =
-                                                      snapshot.data;
-                                                  // Customize what your widget looks like with no query results.
-                                                  if (snapshot.data.isEmpty) {
-                                                    // return Container();
-                                                    // For now, we'll just include some dummy data.
-                                                    textAydinKadinDogumRecordList =
-                                                        createDummyAydinKadinDogumRecord(
-                                                            count: 1);
-                                                  }
-                                                  final textAydinKadinDogumRecord =
-                                                      textAydinKadinDogumRecordList
-                                                          .first;
-                                                  return Text(
-                                                    listViewAydinKadinDogumRecord
-                                                        .brans,
-                                                    style: FlutterFlowTheme
-                                                        .bodyText2
-                                                        .override(
-                                                      fontFamily: 'Poppins',
-                                                    ),
-                                                  );
-                                                },
                                               )
                                             ],
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              StreamBuilder<
-                                                  List<AydinKadinDogumRecord>>(
-                                                stream:
-                                                    queryAydinKadinDogumRecord(
-                                                  queryBuilder:
-                                                      (aydinKadinDogumRecord) =>
-                                                          aydinKadinDogumRecord
-                                                              .orderBy(
-                                                                  'telefon'),
-                                                  singleRecord: true,
+                                              Text(
+                                                rehberAydinKadinDogumRecord
+                                                    .telefon,
+                                                style: FlutterFlowTheme
+                                                    .bodyText1
+                                                    .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme
+                                                      .primaryColor,
+                                                  fontWeight: FontWeight.w500,
                                                 ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                        child:
-                                                            CircularProgressIndicator());
-                                                  }
-                                                  List<AydinKadinDogumRecord>
-                                                      textAydinKadinDogumRecordList =
-                                                      snapshot.data;
-                                                  // Customize what your widget looks like with no query results.
-                                                  if (snapshot.data.isEmpty) {
-                                                    // return Container();
-                                                    // For now, we'll just include some dummy data.
-                                                    textAydinKadinDogumRecordList =
-                                                        createDummyAydinKadinDogumRecord(
-                                                            count: 1);
-                                                  }
-                                                  final textAydinKadinDogumRecord =
-                                                      textAydinKadinDogumRecordList
-                                                          .first;
-                                                  return Text(
-                                                    listViewAydinKadinDogumRecord
-                                                        .telefon,
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily: 'Poppins',
-                                                      color: FlutterFlowTheme
-                                                          .primaryColor,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
-                                                  );
-                                                },
                                               )
                                             ],
                                           )
