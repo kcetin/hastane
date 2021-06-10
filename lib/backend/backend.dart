@@ -6,11 +6,13 @@ import '../flutter_flow/flutter_flow_util.dart';
 
 import 'schema/users_record.dart';
 import 'schema/aydin_kadin_dogum_record.dart';
+import 'schema/hastane_idare_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'schema/users_record.dart';
 export 'schema/aydin_kadin_dogum_record.dart';
+export 'schema/hastane_idare_record.dart';
 
 Stream<List<UsersRecord>> queryUsersRecord(
         {Query Function(Query) queryBuilder,
@@ -25,6 +27,14 @@ Stream<List<AydinKadinDogumRecord>> queryAydinKadinDogumRecord(
         bool singleRecord = false}) =>
     queryCollection(
         AydinKadinDogumRecord.collection, AydinKadinDogumRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Stream<List<HastaneIdareRecord>> queryHastaneIdareRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(
+        HastaneIdareRecord.collection, HastaneIdareRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(
