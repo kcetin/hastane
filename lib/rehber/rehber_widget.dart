@@ -1,9 +1,7 @@
-import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../rehber_detail/rehber_detail_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -113,17 +111,8 @@ class _RehberWidgetState extends State<RehberWidget> {
                                       padding: EdgeInsets.fromLTRB(4, 0, 4, 0),
                                       child: InkWell(
                                         onTap: () async {
-                                          final isim =
-                                              rehberAydinKadinDogumRecord.isim;
-
-                                          final aydinKadinDogumRecordData =
-                                              createAydinKadinDogumRecordData(
-                                            isim: isim,
-                                          );
-
-                                          await AydinKadinDogumRecord.collection
-                                              .doc()
-                                              .set(aydinKadinDogumRecordData);
+                                          await launchURL(
+                                              rehberAydinKadinDogumRecord.isim);
                                         },
                                         child: Icon(
                                           Icons.search_rounded,
