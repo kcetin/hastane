@@ -178,7 +178,7 @@ class _NobetWidgetState extends State<NobetWidget> {
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width,
-                                height: 80,
+                                height: 95,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.tertiaryColor,
                                   border: Border.all(
@@ -197,14 +197,15 @@ class _NobetWidgetState extends State<NobetWidget> {
                                             MainAxisAlignment.center,
                                         children: [
                                           Container(
-                                            width: 60,
-                                            height: 60,
+                                            width: 72,
+                                            height: 72,
                                             clipBehavior: Clip.antiAlias,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
-                                            child: Image.asset(
-                                              'assets/images/user_4@2x.png',
+                                            child: Image.network(
+                                              listViewAydinKadinDogumRecord
+                                                  .resimUrl,
                                             ),
                                           )
                                         ],
