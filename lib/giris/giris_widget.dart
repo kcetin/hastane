@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class GirisWidget extends StatefulWidget {
-  GirisWidget({Key key}) : super(key: key);
+  GirisWidget({
+    Key key,
+    this.tlf,
+  }) : super(key: key);
+
+  final String tlf;
 
   @override
   _GirisWidgetState createState() => _GirisWidgetState();
@@ -18,18 +23,15 @@ class _GirisWidgetState extends State<GirisWidget> {
     return Scaffold(
       key: scaffoldKey,
       body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Giriş',
-              style: FlutterFlowTheme.title1.override(
-                fontFamily: 'Poppins',
-              ),
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Stack(
+                children: [],
+              )
+            ],
+          ),
         ),
       ),
     );

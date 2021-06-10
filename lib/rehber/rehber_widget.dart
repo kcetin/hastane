@@ -66,8 +66,7 @@ class _RehberWidgetState extends State<RehberWidget> {
                                 stream: queryAydinKadinDogumRecord(
                                   queryBuilder: (aydinKadinDogumRecord) =>
                                       aydinKadinDogumRecord.where('isim',
-                                          isLessThanOrEqualTo:
-                                              textController.text),
+                                          isEqualTo: textController.text),
                                   singleRecord: true,
                                 ),
                                 builder: (context, snapshot) {
@@ -230,55 +229,71 @@ class _RehberWidgetState extends State<RehberWidget> {
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsets.fromLTRB(8, 1, 0, 0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(
-                                              listViewAydinKadinDogumRecord
-                                                  .isim,
-                                              style: FlutterFlowTheme.subtitle1
-                                                  .override(
-                                                fontFamily: 'Poppins',
-                                                color: Color(0xFF15212B),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(
-                                              listViewAydinKadinDogumRecord
-                                                  .brans,
-                                              style: FlutterFlowTheme.bodyText2
-                                                  .override(
-                                                fontFamily: 'Poppins',
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(
-                                              listViewAydinKadinDogumRecord
-                                                  .telefon,
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
-                                                fontFamily: 'Poppins',
-                                                color: FlutterFlowTheme
-                                                    .primaryColor,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            )
-                                          ],
-                                        )
-                                      ],
+                                    child: InkWell(
+                                      onTap: () async {
+                                        await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                RehberDetailWidget(
+                                              detailTerm: '',
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                listViewAydinKadinDogumRecord
+                                                    .isim,
+                                                style: FlutterFlowTheme
+                                                    .subtitle1
+                                                    .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF15212B),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                listViewAydinKadinDogumRecord
+                                                    .brans,
+                                                style: FlutterFlowTheme
+                                                    .bodyText2
+                                                    .override(
+                                                  fontFamily: 'Poppins',
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                listViewAydinKadinDogumRecord
+                                                    .telefon,
+                                                style: FlutterFlowTheme
+                                                    .bodyText1
+                                                    .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme
+                                                      .primaryColor,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

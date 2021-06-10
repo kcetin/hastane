@@ -38,6 +38,7 @@ dependencies:
   page_transition:
   rxdart: ^0.25.0
   sign_in_with_apple: ^2.5.4
+  smooth_page_indicator:
   timeago:
   url_launcher:
 
@@ -49,9 +50,17 @@ dependencies:
 dev_dependencies:
   build_runner: ^1.11.5
   built_value_generator: ^8.0.4
+  flutter_launcher_icons: ^0.8.1
 
   flutter_test:
     sdk: flutter
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: 'assets/images/phone-book.png'
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

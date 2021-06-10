@@ -1,11 +1,15 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SearchResultsPageWidget extends StatefulWidget {
-  SearchResultsPageWidget({Key key}) : super(key: key);
+  SearchResultsPageWidget({
+    Key key,
+    this.searchTerm,
+  }) : super(key: key);
+
+  final String searchTerm;
 
   @override
   _SearchResultsPageWidgetState createState() =>
@@ -712,40 +716,6 @@ class _SearchResultsPageWidgetState extends State<SearchResultsPageWidget> {
                           ],
                         )
                       ],
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 0, 80),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0, 16, 16, 0),
-                  child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
-                    },
-                    text: 'Map View',
-                    options: FFButtonOptions(
-                      width: 95,
-                      height: 40,
-                      color: FlutterFlowTheme.primaryColor,
-                      textStyle: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                      ),
-                      elevation: 2,
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 1,
-                      ),
-                      borderRadius: 8,
                     ),
                   ),
                 )
