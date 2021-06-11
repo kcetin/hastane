@@ -226,6 +226,7 @@ class _NobetWidgetState extends State<NobetWidget> {
                                                 style: FlutterFlowTheme.title3
                                                     .override(
                                                   fontFamily: 'Poppins',
+                                                  fontSize: 18,
                                                 ),
                                               )
                                             ],
