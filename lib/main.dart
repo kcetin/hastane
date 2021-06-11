@@ -9,6 +9,7 @@ import 'rehber/rehber_widget.dart';
 import 'nobet/nobet_widget.dart';
 import 'icapci/icapci_widget.dart';
 import 'yonetim/yonetim_widget.dart';
+import 'giris/giris_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -62,7 +63,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'Anasayfa';
+  String _currentPage = 'giris';
 
   @override
   void initState() {
@@ -78,6 +79,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'nobet': NobetWidget(),
       'icapci': IcapciWidget(),
       'yonetim': YonetimWidget(),
+      'giris': GirisWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
@@ -121,6 +123,17 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Yönetim',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.blur_on_outlined,
+              size: 24,
+            ),
+            activeIcon: Icon(
+              Icons.blur_circular_sharp,
+              size: 24,
+            ),
+            label: 'Giriş',
           )
         ],
         backgroundColor: Colors.white,

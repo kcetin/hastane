@@ -190,133 +190,140 @@ class _NobetWidgetState extends State<NobetWidget> {
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Card(
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: Colors.white,
-                                elevation: 8,
-                                child: Padding(
-                                  padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                  child: Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    height: 95,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.tertiaryColor,
-                                      border: Border.all(
-                                        color: Color(0xFFC8CED5),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                child: Card(
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  color: Colors.white,
+                                  elevation: 8,
+                                  child: Padding(
+                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.95,
+                                      height: 95,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.tertiaryColor,
+                                        border: Border.all(
+                                          color: Color(0xFFC8CED5),
+                                        ),
                                       ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(8, 0, 8, 0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Container(
-                                                  width: 72,
-                                                  height: 72,
-                                                  clipBehavior: Clip.antiAlias,
-                                                  decoration: BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                  ),
-                                                  child: Image.network(
-                                                    listViewAydinKadinDogumRecord
-                                                        .resimUrl,
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Text(
+                                      child: Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(
+                                                  8, 0, 8, 0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Container(
+                                                    width: 72,
+                                                    height: 72,
+                                                    clipBehavior:
+                                                        Clip.antiAlias,
+                                                    decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                    child: Image.network(
                                                       listViewAydinKadinDogumRecord
-                                                          .isim,
-                                                      style: FlutterFlowTheme
-                                                          .title3
-                                                          .override(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 18,
-                                                      ),
-                                                    )
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Expanded(
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 4, 4, 0),
-                                                        child: Text(
-                                                          listViewAydinKadinDogumRecord
-                                                              .brans,
-                                                          style:
-                                                              FlutterFlowTheme
-                                                                  .subtitle2
-                                                                  .override(
-                                                            fontFamily:
-                                                                'Poppins',
+                                                          .resimUrl,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Text(
+                                                        listViewAydinKadinDogumRecord
+                                                            .isim,
+                                                        style: FlutterFlowTheme
+                                                            .title3
+                                                            .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 18,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Expanded(
+                                                        child: Padding(
+                                                          padding: EdgeInsets
+                                                              .fromLTRB(
+                                                                  0, 4, 4, 0),
+                                                          child: Text(
+                                                            listViewAydinKadinDogumRecord
+                                                                .brans,
+                                                            style:
+                                                                FlutterFlowTheme
+                                                                    .subtitle2
+                                                                    .override(
+                                                              fontFamily:
+                                                                  'Poppins',
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    )
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Text(
-                                                      listViewAydinKadinDogumRecord
-                                                          .telefon,
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: FlutterFlowTheme
-                                                            .secondaryColor,
-                                                      ),
-                                                    )
-                                                  ],
-                                                )
-                                              ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Text(
+                                                        listViewAydinKadinDogumRecord
+                                                            .telefon,
+                                                        style: FlutterFlowTheme
+                                                            .bodyText1
+                                                            .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                              .secondaryColor,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(0, 0, 8, 0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.chevron_right_rounded,
-                                                  color: Color(0xFF82878C),
-                                                  size: 24,
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        ],
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(
+                                                  0, 0, 8, 0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.chevron_right_rounded,
+                                                    color: Color(0xFF82878C),
+                                                    size: 24,
+                                                  )
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
