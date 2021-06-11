@@ -29,117 +29,132 @@ class _NobetWidgetState extends State<NobetWidget> {
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          Container(
-            height: 140,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.tertiaryColor,
-              border: Border.all(
-                color: Color(0xFFDBE2E7),
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(5, 15, 1, 10),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
-                    child: Row(
+          Card(
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            color: Color(0xFFF5F5F5),
+            elevation: 8,
+            child: Align(
+              alignment: Alignment(0, -0.65),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(2, 30, 2, 10),
+                child: Container(
+                  height: 140,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.tertiaryColor,
+                    border: Border.all(
+                      color: Color(0xFFDBE2E7),
+                    ),
+                  ),
+                  alignment: Alignment(0, 0),
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(5, 15, 1, 10),
+                    child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text(
-                          'Nöbetçilerimiz',
-                          style: FlutterFlowTheme.title1.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 28,
-                            fontWeight: FontWeight.w500,
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                'Nöbetçilerimiz',
+                                style: FlutterFlowTheme.title1.override(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
+                          child: Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.white,
+                            elevation: 3,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(4, 0, 4, 0),
+                                    child: Icon(
+                                      Icons.search,
+                                      color: Color(0xFF95A1AC),
+                                      size: 24,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 10,
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                      child: TextFormField(
+                                        controller: textController,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: 'Arama yap...',
+                                          labelStyle: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFF82878C),
+                                          ),
+                                          hintText: 'Find your friend by na',
+                                          hintStyle: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFF95A1AC),
+                                          ),
+                                          enabledBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x004B39EF),
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(4.0),
+                                              topRight: Radius.circular(4.0),
+                                            ),
+                                          ),
+                                          focusedBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x004B39EF),
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(4.0),
+                                              topRight: Radius.circular(4.0),
+                                            ),
+                                          ),
+                                        ),
+                                        style:
+                                            FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF151B1E),
+                                        ),
+                                        textAlign: TextAlign.start,
+                                      ),
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.tune_rounded,
+                                    color: Color(0xFF95A1AC),
+                                    size: 24,
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
                         )
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
-                    child: Card(
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                      color: Colors.white,
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(4, 0, 4, 0),
-                              child: Icon(
-                                Icons.search,
-                                color: Color(0xFF95A1AC),
-                                size: 24,
-                              ),
-                            ),
-                            Expanded(
-                              flex: 10,
-                              child: Padding(
-                                padding: EdgeInsets.fromLTRB(4, 0, 0, 0),
-                                child: TextFormField(
-                                  controller: textController,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText: 'Arama yap...',
-                                    labelStyle:
-                                        FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF82878C),
-                                    ),
-                                    hintText: 'Find your friend by na',
-                                    hintStyle:
-                                        FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF95A1AC),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x004B39EF),
-                                        width: 1,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(4.0),
-                                        topRight: Radius.circular(4.0),
-                                      ),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x004B39EF),
-                                        width: 1,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(4.0),
-                                        topRight: Radius.circular(4.0),
-                                      ),
-                                    ),
-                                  ),
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xFF151B1E),
-                                  ),
-                                  textAlign: TextAlign.start,
-                                ),
-                              ),
-                            ),
-                            Icon(
-                              Icons.tune_rounded,
-                              color: Color(0xFF95A1AC),
-                              size: 24,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                ],
+                ),
               ),
             ),
           ),
@@ -176,116 +191,135 @@ class _NobetWidgetState extends State<NobetWidget> {
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                height: 95,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  border: Border.all(
-                                    color: Color(0xFFC8CED5),
-                                    width: 1,
-                                  ),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                            width: 72,
-                                            height: 72,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: Image.network(
-                                              listViewAydinKadinDogumRecord
-                                                  .resimUrl,
-                                            ),
-                                          )
-                                        ],
+                              Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: Colors.white,
+                                elevation: 8,
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 95,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.tertiaryColor,
+                                      border: Border.all(
+                                        color: Color(0xFFC8CED5),
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Column(
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                      child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                         children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Text(
-                                                listViewAydinKadinDogumRecord
-                                                    .isim,
-                                                style: FlutterFlowTheme.title3
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  fontSize: 18,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: EdgeInsets.fromLTRB(
-                                                      0, 4, 4, 0),
-                                                  child: Text(
-                                                    listViewAydinKadinDogumRecord
-                                                        .brans,
-                                                    style: FlutterFlowTheme
-                                                        .subtitle2
-                                                        .override(
-                                                      fontFamily: 'Poppins',
-                                                    ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsets.fromLTRB(8, 0, 8, 0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Container(
+                                                  width: 72,
+                                                  height: 72,
+                                                  clipBehavior: Clip.antiAlias,
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
                                                   ),
-                                                ),
-                                              )
-                                            ],
+                                                  child: Image.network(
+                                                    listViewAydinKadinDogumRecord
+                                                        .resimUrl,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Text(
-                                                listViewAydinKadinDogumRecord
-                                                    .telefon,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme
-                                                      .secondaryColor,
+                                          Expanded(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      listViewAydinKadinDogumRecord
+                                                          .isim,
+                                                      style: FlutterFlowTheme
+                                                          .title3
+                                                          .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 18,
+                                                      ),
+                                                    )
+                                                  ],
                                                 ),
-                                              )
-                                            ],
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Expanded(
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsets.fromLTRB(
+                                                                0, 4, 4, 0),
+                                                        child: Text(
+                                                          listViewAydinKadinDogumRecord
+                                                              .brans,
+                                                          style:
+                                                              FlutterFlowTheme
+                                                                  .subtitle2
+                                                                  .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      listViewAydinKadinDogumRecord
+                                                          .telefon,
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                            .secondaryColor,
+                                                      ),
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsets.fromLTRB(0, 0, 8, 0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.chevron_right_rounded,
+                                                  color: Color(0xFF82878C),
+                                                  size: 24,
+                                                )
+                                              ],
+                                            ),
                                           )
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 8, 0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(
-                                            Icons.chevron_right_rounded,
-                                            color: Color(0xFF82878C),
-                                            size: 24,
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
+                                  ),
                                 ),
                               )
                             ],
