@@ -38,7 +38,7 @@ class _NobetWidgetState extends State<NobetWidget> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(0, 34, 0, 0),
+              padding: EdgeInsets.fromLTRB(5, 15, 1, 10),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
