@@ -27,7 +27,7 @@ class _GirisWidgetState extends State<GirisWidget> {
       backgroundColor: Color(0xFFECF2F2),
       body: SafeArea(
         child: Container(
-          height: MediaQuery.of(context).size.height * 1,
+          height: MediaQuery.of(context).size.height * 0.85,
           child: Stack(
             alignment: Alignment(0, 0),
             children: [
@@ -61,7 +61,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(2, 50, 2, 0),
+                      padding: EdgeInsets.fromLTRB(2, 40, 2, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
