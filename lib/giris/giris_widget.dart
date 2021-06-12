@@ -37,35 +37,44 @@ class _GirisWidgetState extends State<GirisWidget> {
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            flex: 5,
-                            child: InkWell(
-                              onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                    reverseDuration: Duration(milliseconds: 0),
-                                    child: NavBarPage(initialPage: 'Anasayfa'),
-                                  ),
-                                );
-                              },
-                              child: CachedNetworkImage(
-                                imageUrl:
-                                    'https://pngimg.com/uploads/doctor/doctor_PNG15988.png',
-                                fit: BoxFit.cover,
+                      Expanded(
+                        flex: 5,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              flex: 5,
+                              child: InkWell(
+                                onTap: () async {
+                                  await Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                      reverseDuration:
+                                          Duration(milliseconds: 0),
+                                      child:
+                                          NavBarPage(initialPage: 'Anasayfa'),
+                                    ),
+                                  );
+                                },
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      'https://pngimg.com/uploads/doctor/doctor_PNG15988.png',
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.45,
+                                  fit: BoxFit.fitHeight,
+                                ),
                               ),
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(2, 40, 2, 0),
