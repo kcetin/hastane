@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
-class GirisWidget extends StatefulWidget {
-  GirisWidget({
+class AcilisWidget extends StatefulWidget {
+  AcilisWidget({
     Key key,
     this.tlf,
   }) : super(key: key);
@@ -14,10 +14,10 @@ class GirisWidget extends StatefulWidget {
   final String tlf;
 
   @override
-  _GirisWidgetState createState() => _GirisWidgetState();
+  _AcilisWidgetState createState() => _AcilisWidgetState();
 }
 
-class _GirisWidgetState extends State<GirisWidget> {
+class _AcilisWidgetState extends State<AcilisWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

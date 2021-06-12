@@ -158,7 +158,7 @@ class _PhoneSMSPageWidgetState extends State<PhoneSMSPageWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            NavBarPage(initialPage: 'giris'),
+                                            NavBarPage(initialPage: 'acilis'),
                                       ),
                                       (r) => false,
                                     );
