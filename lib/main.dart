@@ -6,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'anasayfa/anasayfa_widget.dart';
 import 'rehber/rehber_widget.dart';
-import 'nobetci/nobetci_widget.dart';
 import 'icapci/icapci_widget.dart';
 import 'yonetim/yonetim_widget.dart';
 import 'giris/giris_widget.dart';
@@ -76,7 +75,6 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Anasayfa': AnasayfaWidget(),
       'rehber': RehberWidget(),
-      'Nobetci': NobetciWidget(),
       'icapci': IcapciWidget(),
       'yonetim': YonetimWidget(),
       'giris': GirisWidget(),
@@ -102,13 +100,6 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Rehber',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.moon,
-              size: 24,
-            ),
-            label: 'Nöbetçi',
           ),
           BottomNavigationBarItem(
             icon: Icon(
