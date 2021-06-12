@@ -186,23 +186,26 @@ class _PhoneSMSPageWidgetState extends State<PhoneSMSPageWidget> {
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                                    child: Text(
-                                      'ÇokKolay2021',
-                                      style: GoogleFonts.getFont(
-                                        'Open Sans',
-                                        color: Color(0xFFADADAD),
-                                        fontSize: 14,
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                      child: Text(
+                                        'ÇokKolay2021',
+                                        style: GoogleFonts.getFont(
+                                          'Open Sans',
+                                          color: Color(0xFFADADAD),
+                                          fontSize: 14,
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               )
                             ],
                           ),
