@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -40,24 +41,28 @@ class _GirisWidgetState extends State<GirisWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                  reverseDuration: Duration(milliseconds: 0),
-                                  child: NavBarPage(initialPage: 'Anasayfa'),
-                                ),
-                              );
-                            },
-                            child: Image.network(
-                              'https://pngimg.com/uploads/doctor/doctor_PNG15988.png',
-                              fit: BoxFit.cover,
+                          Expanded(
+                            flex: 5,
+                            child: InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  PageTransition(
+                                    type: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                    reverseDuration: Duration(milliseconds: 0),
+                                    child: NavBarPage(initialPage: 'Anasayfa'),
+                                  ),
+                                );
+                              },
+                              child: CachedNetworkImage(
+                                imageUrl:
+                                    'https://pngimg.com/uploads/doctor/doctor_PNG15988.png',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           )
                         ],

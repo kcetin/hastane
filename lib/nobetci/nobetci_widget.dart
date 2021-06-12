@@ -60,7 +60,7 @@ class _NobetciWidgetState extends State<NobetciWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
+                    padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: Colors.white,
@@ -145,6 +145,7 @@ class _NobetciWidgetState extends State<NobetciWidget> {
             ),
           ),
           Expanded(
+            flex: 5,
             child: StreamBuilder<List<AydinKadinDogumRecord>>(
               stream: queryAydinKadinDogumRecord(),
               builder: (context, snapshot) {
